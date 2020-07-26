@@ -186,10 +186,9 @@ tugi.addEventListener("click", () => {
 
 //必殺技
 let waza = document.getElementById("waza");
-let ct = 0;
+let ct = 30;
 waza.addEventListener("click", () => {
   if(flag){
-  ct =30;
   if (ct == 0) {
     if (pb == 1 || pb == 2) {
       eneHp -= plyLv * 5;
