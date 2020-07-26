@@ -232,27 +232,25 @@ waza.addEventListener("click", () => {
       plySt4.textContent = "回復魔法:" + plyHeal;
       plySt6.textContent = "次のレベルまでの経験値" + plyExpNext + "ポイント";
     }
-    
-    eneSt2.textContent = "HP:" + eneHp;
-    waza.textContent = "必殺技発動まで" + ct + "秒";
-  }
-});
-let time = setInterval(() => {
+    let time = setInterval(() => {
       if (flag) {
         if (ct > 0) {
           ct--;
           waza.textContent = "必殺技発動まで" + ct + "秒";
         } else {
           if (pb == 1 || pb == 2) {
-            ct = 30;
             waza.textContent = "必殺技発動可能（レベルの5倍のダメージ）";
           } else {
-            ct = 30;
             waza.textContent = "必殺技発動可能（レベルの10倍のダメージ）";
           }
         }
       }
     }, 1000);
+    eneSt2.textContent = "HP:" + eneHp;
+    waza.textContent = "必殺技発動まで" + ct + "秒";
+  }
+});
+
 
 //ジョブチェンジ
 let yusya = document.getElementById("yusya");
