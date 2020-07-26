@@ -188,7 +188,7 @@ tugi.addEventListener("click", () => {
 let waza = document.getElementById("waza");
 let ct = 30;
 waza.addEventListener("click", () => {
-  if (flag||ct == 0) {
+  if (flag && ct == 0) {
     ct = 30
     if (pb == 1 || pb == 2) {
       eneHp -= plyLv * 5;
