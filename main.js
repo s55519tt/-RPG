@@ -232,7 +232,12 @@ waza.addEventListener("click", () => {
       plySt4.textContent = "回復魔法:" + plyHeal;
       plySt6.textContent = "次のレベルまでの経験値" + plyExpNext + "ポイント";
     }
-    let time = setInterval(() => {
+    
+    eneSt2.textContent = "HP:" + eneHp;
+    waza.textContent = "必殺技発動まで" + ct + "秒";
+  }
+});
+let time = setInterval(() => {
       if (flag) {
         if (ct > 0) {
           ct--;
@@ -248,10 +253,6 @@ waza.addEventListener("click", () => {
         }
       }
     }, 1000);
-    eneSt2.textContent = "HP:" + eneHp;
-    waza.textContent = "必殺技発動まで" + ct + "秒";
-  }
-});
 
 //ジョブチェンジ
 let yusya = document.getElementById("yusya");
