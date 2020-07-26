@@ -16,6 +16,20 @@ for (i = 0; i < 7; i++) {
   let plySt = document.getElementById(plyid[i]);
 }
 plySt0.textContent = plyName;
+let time = setInterval(() => {
+  if (flag) {
+    if (ct > 0) {
+      ct--;
+      waza.textContent = "必殺技発動まで" + ct + "秒";
+    } else {
+      if (pb == 1 || pb == 2) {
+        waza.textContent = "必殺技発動可能（レベルの5倍のダメージ）";
+      } else {
+        waza.textContent = "必殺技発動可能（レベルの10倍のダメージ）";
+      }
+    }
+  }
+}, 1000);
 //プレイヤー回復
 plyImg.addEventListener("mousedown", () => {
   if (flag) {
@@ -188,12 +202,15 @@ tugi.addEventListener("click", () => {
 let waza = document.getElementById("waza");
 let ct = 0;
 waza.addEventListener("click", () => {
-  if(flag){
-  if (ct == 0) {
-    if (pb == 1 || pb == 2) {
-      eneHp -= plyLv * 5;
-    } else {
-      eneHp -= plyLv * 10;
+  if (flag) {
+    if (ct == 0) {
+      if (pb == 1 || pb == 2) {
+        eneHp -= plyLv * 5;
+        ct = 30;
+      } else {
+        eneHp -= plyLv * 10;
+        ct = 30;
+      }
     }
     if (eneHp < 0) {
       eneHp = eneHpMax[j];
@@ -232,26 +249,11 @@ waza.addEventListener("click", () => {
       plySt4.textContent = "回復魔法:" + plyHeal;
       plySt6.textContent = "次のレベルまでの経験値" + plyExpNext + "ポイント";
     }
-    let time = setInterval(() => {
-      if (flag) {
-        if (ct > 0) {
-          ct--;
-          waza.textContent = "必殺技発動まで" + ct + "秒";
-        } else {
-          if (pb == 1 || pb == 2) {
-            waza.textContent = "必殺技発動可能（レベルの5倍のダメージ）";
-          } else {
-            waza.textContent = "必殺技発動可能（レベルの10倍のダメージ）";
-          }
-        }
-      }
-    }, 1000);
+
     eneSt2.textContent = "HP:" + eneHp;
     waza.textContent = "必殺技発動まで" + ct + "秒";
   }
-  }
 });
-
 
 //ジョブチェンジ
 let yusya = document.getElementById("yusya");
