@@ -188,8 +188,9 @@ tugi.addEventListener("click", () => {
 let waza = document.getElementById("waza");
 let ct = 0;
 waza.addEventListener("click", () => {
+  if(flag){
   ct =30;
-  if (flag && ct == 0) {
+  if (ct == 0) {
     if (pb == 1 || pb == 2) {
       eneHp -= plyLv * 5;
     } else {
@@ -248,6 +249,7 @@ waza.addEventListener("click", () => {
     }, 1000);
     eneSt2.textContent = "HP:" + eneHp;
     waza.textContent = "必殺技発動まで" + ct + "秒";
+  }
   }
 });
 
