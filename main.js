@@ -186,7 +186,7 @@ tugi.addEventListener("click", () => {
 
 //必殺技
 let waza = document.getElementById("waza");
-let ct = 30;
+let ct = 0;
 waza.addEventListener("click", () => {
   ct =30;
   if (flag && ct == 0) {
