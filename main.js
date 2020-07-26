@@ -239,8 +239,10 @@ waza.addEventListener("click", () => {
           waza.textContent = "必殺技発動まで" + ct + "秒";
         } else {
           if (pb == 1 || pb == 2) {
+            ct = 30;
             waza.textContent = "必殺技発動可能（レベルの5倍のダメージ）";
           } else {
+            ct = 30;
             waza.textContent = "必殺技発動可能（レベルの10倍のダメージ）";
           }
         }
